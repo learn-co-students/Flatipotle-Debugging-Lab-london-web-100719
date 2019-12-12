@@ -33,8 +33,11 @@ class App extends Component {
 
         <div className="ui raised container segment">
           <h1 className="ui block header">All Orders</h1>
-          <div className="ui three cards">{this.state.orders}</div>
-          {/* <Order orders={this.state.orders} /> */}
+          <div className="ui three cards">
+            {this.state.orders.map(order => {
+              <Order order={order} />;
+            })}
+          </div>
         </div>
       </div>
     );
