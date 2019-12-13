@@ -14,13 +14,7 @@ class App extends Component {
     });
   };
 
-  renderOrders = () => {};
-
   render() {
-    const orders = this.state.orders.map((order, idx) => {
-      <Order key={idx} {...order} />;
-    });
-
     return (
       <div className="App">
         <header className="App-header">
@@ -36,8 +30,8 @@ class App extends Component {
         <div className="ui raised container segment">
           <h1 className="ui block header">All Orders</h1>
           <div className="ui three cards">
-            {this.state.orders.map(order => {
-              return <Order order={order} />;
+            {this.state.orders.map((order, idx) => {
+              return <Order key={idx} order={order} />;
             })}
           </div>
         </div>
